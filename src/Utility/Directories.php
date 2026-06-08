@@ -11,7 +11,7 @@ final class Directories
             return;
         }
 
-        if (!mkdir($directory, 0777, true) && !is_dir($directory)) {
+        if (!@mkdir($directory, 0777, true) && !is_dir($directory)) {
             throw new \RuntimeException(sprintf('Directory "%s" was not created', $directory));
         }
     }
